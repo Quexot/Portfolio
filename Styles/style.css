@@ -1,0 +1,10 @@
+*{
+font-family: sans-serif, Helvetica;
+font-weight: 400;
+font-size: 16px;
+color: #fff;
+}
+div{
+background-color: #000;
+display: block;
+}
