@@ -1,2 +1,0 @@
-//some code here
-Lorem ipsum dolor sit amet

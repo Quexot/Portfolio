@@ -1,1 +1,0 @@
-//some code here, not similar to index
