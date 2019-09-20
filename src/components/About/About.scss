@@ -1,0 +1,26 @@
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+  .about-content {
+    position: relative;
+    left: 15em;
+    h1 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 3em;
+      text-align: left;
+    }
+    p {
+      font-size: 1.2em;
+      text-align: left;
+      width: 37em;
+      max-width: 50%;
+    }
+  }
+  img {
+    margin-left: 0em;
+    width: 50%;
+  }
+}

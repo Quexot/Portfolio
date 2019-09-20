@@ -1,0 +1,25 @@
+.project {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 15em;
+  top: 8em;
+  align-items: flex-start;
+  img {
+    width: auto;
+    height: 30em;
+  }
+}
+
+.Work {
+  .heading {
+    font-family: "Montserrat", sans-serif;
+    font-size: 3em;
+    text-align: center;
+    .projects-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 2em;
+    }
+  }
+}

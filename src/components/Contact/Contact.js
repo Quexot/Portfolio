@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
-import data from '../MyData';
+import data from '../../dataEN';
 
 class Contact extends Component {
     state = {  }
