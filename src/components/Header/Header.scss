@@ -45,6 +45,7 @@
     border: 3px;
     display: flex;
     margin: auto;
+    padding: 1em 3em;
     justify-content: center;
     transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;
@@ -57,10 +58,14 @@ button:hover {
   opacity: 0.8;
 }
 
-.header-title button a {
-  font-family: "Open Sans", sans-serif;
-  color: white;
-  text-decoration: none;
+.header-title {
+  button {
+    a {
+      font-family: "Open Sans", sans-serif;
+      color: white;
+      text-decoration: none;
+    }
+  }
 }
 
 .header-title {
