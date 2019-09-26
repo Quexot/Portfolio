@@ -30,13 +30,12 @@
   }
 }
 
+//Mobile
 @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
   .about {
     position: relative;
     display: flex;
     top: -10em;
-    img {
-    }
   }
   .main {
     top: -30em;
@@ -59,4 +58,9 @@
       text-align: left;
     }
   }
+}
+
+//Planshets and Landskape
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+
 }

@@ -43,7 +43,9 @@
   button {
     background: black;
     border: 3px;
+    display: flex;
     margin: auto;
+    justify-content: center;
     transition: all 0.2s ease-out;
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
