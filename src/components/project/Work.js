@@ -13,7 +13,7 @@ class Works extends Component {
             Projects
           </Fade>
         </h1>
-        <div className="Projects-content">
+        <div className="projects-content">
           {data.projects.map(project => (
             <Project
               key={project.id}

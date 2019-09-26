@@ -1,10 +1,34 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
+import data from "../../dataEN";
+import Scroll from 'react-scroll';
+
+var Events = Scroll.Events;
+var scrollSpy = Scroll.scrollSpy;
+
 class Navbar extends Component {
   state = {};
+
   scrollToTop = () => {
     scroll.scrollToTop();
   };
+
+  componentDidMount() {
+    Events.scrollEvent.register('begin', function(){
+      console.log('begin', arguments);
+    })
+
+    Events.scrollEvent.register('end', function(){
+      console.log('end', arguments);
+    })
+    
+    scrollSpy.update();
+  }
+  componentWillUnmount() {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+  }
+  
   render() {
     return (
       <nav>
@@ -13,14 +37,14 @@ class Navbar extends Component {
             <Link
               className="link"
               activeClass="active"
-              to="homw"
+              to="home"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
               onClick={this.scrollToTop}
             >
-              Home
+              {data.home}
             </Link>
           </li>
           <li>
@@ -33,20 +57,20 @@ class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              About
+              {data.about}
             </Link>
           </li>
           <li>
             <Link
               className="link"
               activeClass="active"
-              to="Projects"
+              to="Work"
               spy={true}
               smooth={true}
               offset={-70}
               duration={500}
             >
-              Project
+              {data.work}
             </Link>
           </li>
           <li>
@@ -59,7 +83,7 @@ class Navbar extends Component {
               offset={-70}
               duration={500}
             >
-              Contact
+              {data.contact}
             </Link>
           </li>
         </ul>

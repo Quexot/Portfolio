@@ -1,0 +1,22 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+button, a{
+    height: 30px;
+    border-radius: 3px;
+    border: 0px;
+    color: white;
+    background-color: navy;
+    margin: 0 5px 0 5px;
+    outline: none;
+    text-decoration: none;
+}
+button:disabled{
+    opacity: 0.4;
+}
+
+button:active{
+    transform: scale(0.9);
+}

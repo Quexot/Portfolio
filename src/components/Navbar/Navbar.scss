@@ -1,25 +1,42 @@
 nav {
-  position: absolute;
-  left: 60em;
-  top: 6em;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  margin: auto;
   z-index: 100;
+  width: 300px;
+  background-color: bisque;
+  border-radius: 0 0 30px 30px;
+  ul {
+    padding: 0;
+    width: inherit;
+    li {
+      display: inline-block;
+      cursor: pointer;
+      padding: 0 3% 0 3%;
+      .link {
+        text-decoration: none;
+        color: black;
+        opacity: 0.5;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+      }
+      :hover {
+        opacity: 1;
+      }
+    }
+  }
+}
 
-  li {
-    display: inline-block;
-    cursor: pointer;
-    .link {
-      text-decoration: none;
-      color: black;
-      padding: 1em;
-      opacity: 0.5;
-      transition: all 0.3s ease-in-out;
-      -webkit-transition: all 0.3s ease-in-out;
-      -moz-transition: all 0.3s ease-in-out;
-      -ms-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
-    }
-    :hover {
-      opacity: 1;
-    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  .heading-background {
+    display: none;
+  }
+  nav {
+    display: none;
   }
 }

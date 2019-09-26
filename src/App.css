@@ -1,32 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&display=swap");
 
-body {
-  font-size: 16px;
-  background: #FCF8EC;
-  font-family: "Open Sans", sans-serif;
-  overflow-x: hidden;
-  z-index: 1;
-  box-sizing: border-box;
-}
-
 .App {
   text-align: center;
 }
 
 .App-header {
   position: relative;
-  min-height: 100vh;
   display: flex;
   margin-bottom: 10%;
   flex-direction: column;
   align-items: center;
   color: black;
-  top: 4em;
 }
 
 .heading-background {
   position: fixed;
-  width: 100vw;
   opacity: 0.1;
   font-size: 20em;
   left: 0%;
@@ -36,12 +24,9 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   padding: 15px;
-  width: 100vw;
+  width: inherit;
+  box-sizing: border-box;
 }
 
 header h1 {
@@ -50,7 +35,6 @@ header h1 {
   padding: 2em;
   margin-right: 50em;
 }
-
 
 .active {
   color: black;
@@ -87,127 +71,19 @@ header h1 {
   padding: 10%;
 }
 
-
-.contact {
-  position: relative;
-  top: 20em;
-  left: 15em;
-  text-align: left;
-}
-
-.contact h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 5em;
-  text-align: left;
-}
-
-.amazing-color {
-  color: #ae5252;
-  opacity: 1;
-}
-
-.contact .email {
-  color: black;
-  font-size: 2em;
-}
-.contact li {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-right: 1em;
-  margin-left: 0;
-}
-.contact li a {
-  text-decoration: none;
-  color: black;
-}
-.footer {
-  position: relative;
-  top: 2em;
-  padding: 1em;
-}
-.footer a {
-  text-decoration: none;
-  color: #2c59fb;
-}
-
 /* Mobile */
 @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
   body {
     font-size: 6px;
   }
-  header h1 {
-    font-size: 24px;
-    padding: 1em;
-    margin-right: 0em;
-  }
-
-  .heading-background {
-    display: none;
-  }
-  nav {
-    display: none;
+  .App-header header h1 {
+    font-size: 2.5em;
+    margin-right: 0;
   }
   .header-title {
     font-size: 3em;
-    text-align: left;
+    text-align: center;
     top: 1em;
-    left: 1em;
-  }
-  .about {
-    position: relative;
-    display: flex;
-    top: -30em;
-  }
-  .about img {
-    display: none;
-  }
-  .about-content {
-    left: 2em;
-  }
-  .about-content p {
-    font-size: 3.5em;
-    text-align: left;
-    width: 300px;
-  }
-
-  .work {
-    left: 2em;
-    top: 2em;
-    align-items: flex-start;
-  }
-  .work .work-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 5em;
-  }
-  .project img {
-    width: 45em;
-    height: 45em;
-  }
-
-  .contact {
-    top: 15em;
-    left: 2em;
-  }
-  .contact h1 {
-    font-size: 4em;
-  }
-  .contact .email {
-    font-size: 3.5em;
-  }
-
-  .contact li {
-    display: block;
-    padding: 2em;
-  }
-  .contact li a {
-    font-size: 2.5em;
-  }
-  .footer {
-    top: 4em;
-    padding: 1em;
-    font-size: 2em;
   }
 }
 
@@ -215,37 +91,6 @@ header h1 {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
   body {
     font-size: 10px;
-  }
-  header h1 {
-    font-size: 5em;
-    padding: 1em;
-    margin-right: 0em;
-  }
-
-  nav {
-    display: none;
-  }
-  .header-title {
-    font-size: 3.6em;
-    text-align: left;
-    top: 1em;
-    left: 1em;
-  }
-  .about {
-    position: relative;
-    display: flex;
-    top: -10em;
-  }
-  .about img {
-    display: none;
-  }
-  .about-content {
-    left: 6em;
-  }
-  .about-content p {
-    font-size: 3.5em;
-    text-align: left;
-    width: 700px;
   }
 
   .work {
@@ -339,7 +184,6 @@ header h1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
-
   .contact {
     top: 10em;
     left: 8em;

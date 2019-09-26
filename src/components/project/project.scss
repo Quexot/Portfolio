@@ -1,8 +1,5 @@
 .project {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  left: 15em;
   top: 8em;
   align-items: flex-start;
   img {
@@ -23,3 +20,30 @@
     }
   }
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+  // .Work {
+  //   top: 2em;
+  //   align-items: flex-start;
+  // }
+  // .work .work-content {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  //   grid-gap: 5em;
+  // }
+  // .project img {
+  //   width: 50%;
+  //   height: 50%;
+  // }
+  // .Projects-con
+}
+// .work {
+//   top: 2em;
+//   align-items: flex-start;
+// }
+// .work .work-content {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-gap: 5em;
+// }
+// <!---slider--->

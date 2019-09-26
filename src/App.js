@@ -1,18 +1,20 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
-import Works from "./components/project/projects";
+import Works from "./components/project/Work";
 import Contact from "./components/Contact/Contact";
 import Navbar from "./components/Navbar/Navbar";
 import './components/Navbar/Navbar.scss'
+import './components/Header/Header.scss'
 import './components/About/About.scss'
 import './components/project/project.scss'
+import './components/Contact/Contact.scss'
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+        <Navbar />
       <div className="App-header">
         <Header />
       </div>
