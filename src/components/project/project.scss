@@ -1,17 +1,19 @@
 .project {
   position: relative;
-  top: 8em;
   align-items: flex-start;
   img {
     width: auto;
     height: 30em;
   }
 }
+.projects{
+  margin-top: 10%;
+}
 
 .Work {
   .heading {
     font-family: "Montserrat", sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
     .projects-content {
       display: grid;

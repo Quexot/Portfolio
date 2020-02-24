@@ -1,17 +1,14 @@
 import React, { Component } from "react";
 import Project from "./project";
-import Fade from "react-reveal/Fade";
 import data from "../../dataEN";
 
 class Works extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div className='projects'>
         <h1 className="heading">
-          <Fade bottom cascade>
             Projects
-          </Fade>
         </h1>
         <div className="projects-content">
           {data.projects.map(project => (

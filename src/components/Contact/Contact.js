@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Fade from "react-reveal/Fade";
 import data from "../../dataEN";
 
 class Contact extends Component {
@@ -7,30 +6,22 @@ class Contact extends Component {
   render() {
     return (
       <div>
-        <h2>
-          <Fade bottom cascade>
-            {data.contacts}
-          </Fade>
-        </h2>
-        <Fade left>
-          <div className="contact-content">
-            <a href={`mailto:${data.contactEmail}`} className="email">
-              {data.contactEmail}
-            </a>
-            <ul>
-              {data.social.map((link, index) => (
-                <li key={index}>
-                  <a target="_blank" rel="noopener noreferrer" href={link.url}>
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Fade>
+        <h2>{data.contacts}</h2>
+
+        <div className="contact-content">
+          <ul>
+            {data.social.map((link, index) => (
+              <li key={index}>
+                <a target="_blank" rel="noopener noreferrer" href={link.url}>
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         <span className="footer">
-          Made by <a href="">Remizov Daniil</a>
+          Made by Quexot
         </span>
       </div>
     );

@@ -12,17 +12,22 @@
     font-size: 1.5em;
     text-decoration: none;
   }
+  ul{
+    padding: 0;
+  }
   li {
+    margin-left: 10px;
     display: inline-block;
-    margin: 0;
-
     a {
       text-decoration: none;
       color: black;
     }
   }
+  li:after{
+    content: '\2022';
+    font-size: 13px;
+  }
 }
-
 .footer {
   top: 2em;
   a {

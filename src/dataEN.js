@@ -1,5 +1,6 @@
 import layout from "./images/promo.png";
 export default {
+  language: [{lang:"en"}],
   name: "Remizov Daniil",
   headerTagline: ["Frontend-developer"],
   contactEmail: "ren67871@gmail.com",
@@ -21,6 +22,6 @@ export default {
       url: ""
     }
   ],
-  social: [{ name: "Github", url: "https://github.com/Quexot" }],
+  social: [{ name: "Github", url: "https://github.com/Quexot" },{ name: "VK", url:"https://vk.com/trulylimitless"}],
   contacts: "Contacts"
 };

@@ -1,37 +1,36 @@
 import React, { Component } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import data from "../../dataEN";
-import Scroll from 'react-scroll';
+import Scroll from "react-scroll";
 
 var Events = Scroll.Events;
 var scrollSpy = Scroll.scrollSpy;
 
-class Navbar extends Component {
-  state = {};
-
+class Navbar extends Component{
+  
   scrollToTop = () => {
     scroll.scrollToTop();
   };
 
   componentDidMount() {
-    Events.scrollEvent.register('begin', function(){
-      console.log('begin', arguments);
-    })
+    Events.scrollEvent.register("begin", function() {
+      console.log("begin", arguments);
+    });
 
-    Events.scrollEvent.register('end', function(){
-      console.log('end', arguments);
-    })
-    
+    Events.scrollEvent.register("end", function() {
+      console.log("end", arguments);
+    });
+
     scrollSpy.update();
   }
   componentWillUnmount() {
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
+    Events.scrollEvent.remove("begin");
+    Events.scrollEvent.remove("end");
   }
-  
+
   render() {
     return (
-      <nav>
+      <nav className={this.props.classes}>
         <ul>
           <li>
             <Link
@@ -87,6 +86,10 @@ class Navbar extends Component {
             </Link>
           </li>
         </ul>
+        <label className="language-switcher">
+          <input type="checkbox"/>
+          <span className="language-slider"></span>
+        </label>
       </nav>
     );
   }

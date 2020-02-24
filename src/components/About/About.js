@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 import data from "../../dataEN";
 
+
+
 class About extends Component {
-  state = {};
+  
   render() {
     return (
       <div className="About main">
@@ -19,7 +21,7 @@ class About extends Component {
             </Fade>
           </div>
           {data.ShowAboutImage ? (
-            <img src={data.aboutImage} alt="about iamge"></img>
+            <img src={data.aboutImage} alt="about image"></img>
           ) : null}
         </div>
       </div>
