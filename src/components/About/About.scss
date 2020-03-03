@@ -1,70 +1,75 @@
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%;
-  display: flex;
-  flex-direction: column;
-  .main-header {
-    font-family: "Montserrat", sans-serif;
-    font-size: 2em;
-    align-self: center;
-  }
-  .main-body {
-    display: flex;
-    justify-content: space-between;
-  }
-  p {
-    font-size: 1.2em;
-    text-align: left;
-  }
-  .about-content {
-    position: relative;
-    padding: 5%;
-  }
-  img {
-    margin-right: 5em;
-    opacity: 0.2;
-    width: auto;
-    box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6);
-  }
-}
-.About{
-  margin-top: 10%;
+@mixin visibility($vis, $dis) {
+  visibility: $vis; 
+  display: $dis;
 }
 
-//Mobile
-@media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
-  .about {
-    position: relative;
-    display: flex;
-    top: -10em;
-  }
-  .main {
-    top: -30em;
-    .main-header {
-      font-size: 3em;
+
+.About {
+  &.main {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+    visibility: hidden;
+    position: absolute;
+    flex-direction: column;
+    &.main-header {
+      font-family: "Montserrat", sans-serif;
+      font-size: 2em;
+      align-self: center;
     }
     .main-body {
-      flex-direction: column;
-      margin-bottom: 5%;
-      img {
-        width: 50%;
-        height: 50%;
-        margin: auto;
-      }
+      display: flex;
+      justify-content: space-between;
     }
-  }
-  .about-content {
     p {
-      font-size: 3.5em;
+      font-size: 1.2em;
       text-align: left;
     }
+    .about-content {
+      position: relative;
+      padding: 5%;
+    }
+    img {
+      margin-right: 5em;
+      opacity: 0.2;
+      width: auto;
+      box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6);
+    }
   }
 }
 
-//Planshets and Landscape
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+// //Mobile
+// @media only screen and (min-device-width: 320px) and (max-device-width: 760px) {
+//   .about {
+//     position: relative;
+//     display: flex;
+//     top: -10em;
+//   }
+//   .main {
+//     top: -30em;
+//     .main-header {
+//       font-size: 3em;
+//     }
+//     .main-body {
+//       flex-direction: column;
+//       margin-bottom: 5%;
+//       img {
+//         width: 50%;
+//         height: 50%;
+//         margin: auto;
+//       }
+//     }
+//   }
+//   .about-content {
+//     p {
+//       font-size: 3.5em;
+//       text-align: left;
+//     }
+//   }
+// }
 
-}
+// //Planshets and Landscape
+// @media only screen and (min-device-width: 768px) and (max-device-width: 1024px){
+
+// }

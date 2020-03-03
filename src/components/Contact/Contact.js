@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import data from "../../dataEN";
 
-class Contact extends Component {
-  state = {};
-  render() {
+export const Contact = () => {
     return (
-      <div>
+      <div className="contact">
         <h2>{data.contacts}</h2>
 
         <div className="contact-content">
@@ -26,6 +24,5 @@ class Contact extends Component {
       </div>
     );
   }
-}
 
-export default Contact;
+

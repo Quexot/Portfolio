@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Project from "./project";
 import data from "../../dataEN";
 
-class Works extends Component {
+class Projects extends Component {
   state = {};
   render() {
     return (
@@ -26,4 +26,4 @@ class Works extends Component {
   }
 }
 
-export default Works;
+export default Projects;

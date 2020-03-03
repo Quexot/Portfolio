@@ -1,21 +1,22 @@
-.project {
+.projects {
   position: relative;
   align-items: flex-start;
-  img {
+  visibility: hidden;
+  display: none;
+  position: absolute;
+  margin-top: 10%;
+  &img {
     width: auto;
     height: 30em;
   }
 }
-.projects{
-  margin-top: 10%;
-}
 
 .Work {
-  .heading {
+  &.heading {
     font-family: "Montserrat", sans-serif;
     font-size: 2em;
     text-align: center;
-    .projects-content {
+    &.projects-content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2em;

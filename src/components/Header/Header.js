@@ -1,69 +1,65 @@
-import React, { Component } from "react";
-import { Fragment } from "react";
+import React, { useState, useEffect } from "react";
 import data from "../../dataEN";
 
-class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      offset: 0,
-      x: 0,
-      y: 0
+const useMousePosition = () => {
+  const [coords, setCoords] = useState({
+    offset: 0,
+    x: 0,
+    y: 0
+  });
+  useEffect(() => {
+    const setMousePosition = e => {
+      setCoords({
+        x: e.clientX,
+        y: e.clientY
+      });
     };
-  }
-  componentDidMount() {
-    window.addEventListener("scroll", this.parallaxShift);
-    window.addEventListener('onPointerMove', this.parallaxMouseMove);
-  }
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.parallaxShift);
-    window.removeEventListener('onPointerMove', this.parallaxMouseMove);
-  }
 
-  parallaxShift = () => {
-    this.setState({
-      offset: window.pageYOffset
-    });
-  };
-  parallaxMouseMove = (e) => {
-    this.setState({
-      x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY,
-    });
-  }
-  render() {
-    const {x,y} = this.state;
-    return (
-      <Fragment>
+    window.addEventListener("mousemove", setMousePosition);
+    return () => {
+      window.removeEventListener("mousemove", setMousePosition);
+    };
+  }, []);
+  return coords;
+};
+
+export const Header = props => {
+  const [showContacts, setState] = useState(false);
+  const coords = useMousePosition();
+  const x = coords.x;
+  const y = coords.y;
+  return (
+    <>
+      <div className="App-header">
+        <div className="nav-return"></div>
+        <div className='App-main'>
         <div
           className="heading-background"
-          style={{ 
-            backgroundPositionY: this.state.y/-50,
-            backgroundPositionX: this.state.x/-50,
+          style={{
+            backgroundPositionY: y / -50,
+            backgroundPositionX: x / -50
           }}
-          onMouseMove={this.parallaxMouseMove}
-        >
-        
-         
+        ></div>
+          {props.children}
+          <div className="Wrapper">
+            <div
+              className={`header-title ${
+                showContacts ? "contactsVisible" : ""
+              }`}
+            >
+              <section className="header-main">
+                <h2 className="header-words">{data.headerTagline[0]}</h2>
+                <button onClick={() => setState(!showContacts)}>
+                  Get in touch
+                </button>
+              </section>
+              <section className={`contacts`}>Vk Telegram HH</section>
+            </div>
+          </div>
         </div>
-        {/* <header className="header">
-          <h1>
-            <Fade bottom cascade>
-              {data.name}
-            </Fade>
-          </h1>
-        </header> */}
-
-        <div className="header-title" style={{ 
-          bottom: this.state.offset / 2 
-          }}>
-          <p className="header-words"
-    
-          >{data.headerTagline[0]}</p>
-          <button>Contact</button>
-        </div>
-      </Fragment>
-    );
-  }
-}
+      </div>
+    </>
+  );
+};
 
 export default Header;

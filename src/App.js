@@ -1,51 +1,55 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
-import Works from "./components/project/Work";
-import Contact from "./components/Contact/Contact";
+import MenuIco from "./images/layout.png";
 import Navbar from "./components/Navbar/Navbar";
+import { Contact } from "./components/Contact/Contact";
 import "./components/Navbar/Navbar.scss";
 import "./components/Header/Header.scss";
 import "./components/About/About.scss";
 import "./components/project/project.scss";
 import "./components/Contact/Contact.scss";
-import "./App.css";
-import Menu from "./images/layout.png";
+import "./App.scss";
+import Projects from "./components/project/Work";
 
-function App() {
-  const [menuActive, setState] = React.useState(false);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-    }, 4000);
-  })
+function MenuState (prop) {
+  const [menuActive, setMenu] = useState(false);
+  setMenu(prop);
+
+  return menuActive;  
+}
+// function HOC(WrappedComponent) {
+//   return class extends React.Component {
+//     componentWillReceiveProps(nextProps){}
+//       render() {
+//         return <WrappedComponent {...this.props} />;
+//       }
+//     }
+//   }
+
+
+
+const App = () => {
+  const isActive  = MenuState()
   return (
     <div
-      className={`App rotate-left ${menuActive ? "perspective" : ""} ${
-        menuActive ? "rotate-left--animate" : ""
-      }`}
+      className={`App container rotate-left ${
+        isActive ? "perspective" : ""
+      } ${isActive ? "rotate-left--animate" : ""}`}
     >
-      <div className={`menu`}>
-        <button onClick={() => setState(!menuActive)} className="btn-menu">
-          <img src={Menu} height="18px" width="16px" alt="Hamburger-ico" />
-        </button>
-
-        <div className="App-header">
-          <Header />
+      <Header>
+        <div className="header">
+          <button className="btn-menu" onClick={() => MenuState(!isActive)}>
+            <img src={MenuIco} alt="menuico"></img>
+          </button>
         </div>
-        {/* 
-        <div className="About">
-          <About />
-        </div>
-        <div className="Work">
-          <Works />
-        </div>
-        <div className="contact">
-          <Contact />
-        </div> */}
-      </div>
-      <Navbar classes={`${menuActive ? "isActive" : ""}`} />
+        <About />
+        <Projects />
+        <Contact />
+      </Header>
+      <Navbar classes={`menu ${isActive ? "isActive" : ""}`} />
     </div>
   );
-}
+};
 
 export default App;
